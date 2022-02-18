@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#asdasd asdad sdasda
+pkill -9 -f 7-highlander 
