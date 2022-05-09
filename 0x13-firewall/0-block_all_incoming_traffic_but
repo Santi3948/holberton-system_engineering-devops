@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo apt update
+sudo apt install ufw
+sudo ufw deny from 35.196.66.107 to any port 22 proto tcp
+sudo ufw deny from 35.196.66.107 to any port 443 proto tcp
+sudo ufw deny from 35.196.66.107 to any port 80 proto tcp
