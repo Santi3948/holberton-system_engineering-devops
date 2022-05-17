@@ -8,7 +8,7 @@ import json
 if __name__ == "__main__":
     ru = requests.get('https://jsonplaceholder.typicode.com/users').json()
     rt = requests.get('https://jsonplaceholder.typicode.com/todos').json()
-    with open('todo_all_employees.json', 'w+') as f:
+    with open('todo_all_employees.json', 'a') as f:
         dicc_ker = {}
         for u in ru:
             lista = []
