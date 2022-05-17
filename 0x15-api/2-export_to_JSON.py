@@ -18,7 +18,7 @@ if __name__ == "__main__":
             username = u.get("username")
 
     rt = requests.get('https://jsonplaceholder.typicode.com/todos').json()
-    with open(f'{uid}.json', 'w+') as f:
+    with open(uid + '.json', 'a') as f:
         lista = []
         dicc_ker = {}
         dicc = {}
