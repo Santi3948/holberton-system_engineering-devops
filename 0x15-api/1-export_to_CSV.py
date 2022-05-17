@@ -15,15 +15,14 @@ if __name__ == "__main__":
         if u.get("id") == int(uid):
             name = u.get("name")
             username = u.get("username")
+            break
 
     rt = requests.get('https://jsonplaceholder.typicode.com/todos').json()
     with open(f'{uid}.csv', 'w+') as f:
         for elem in rt:
             if elem.get("userId") == int(uid):
                 f.write('"{}","{}","{}","{}"\n'
-                        .format(str(elem.get("userId")),
-                                str(username), str(elem.get("completed")),
-                                str(elem.get("title"))))
-                done_tasks = done_tasks + 1
-                tasks.append(elem.get("title"))
-                total_tasks = total_tasks + 1
+                        .format(elem.get("userId"),
+                                username, elem.get("completed"),
+                                elem.get("title")))
+                f.write("\n")
