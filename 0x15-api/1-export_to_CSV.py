@@ -18,7 +18,7 @@ if __name__ == "__main__":
             break
 
     rt = requests.get('https://jsonplaceholder.typicode.com/todos').json()
-    with open(f'{uid}.csv', 'w+') as f:
+    with open(uid + '.csv', 'a') as f:
         for elem in rt:
             if elem.get("userId") == int(uid):
                 f.write('"{}","{}","{}","{}"\n'
